@@ -4,8 +4,11 @@
 
 Code examples solving common interview questions.
 
-This project is meant to be used for **learning and researching purposes only**, and it is not meant to be used for
-production.
+This repository is based on the work done in
+the [trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms)
+project, but presents example implementations in Java.
+
+This project is meant to be used for **learning and researching purposes only**.
 
 ## Getting Started
 
