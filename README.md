@@ -20,6 +20,13 @@ Run unit tests with the following command in the project directory:
 mvn test
 ```
 
+## Algorithms
+
+### Math
+
+* [Fibonacci number](https://github.com/little-pinecone/interview-coding-questions/tree/master/src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/fibonacci)
+
 ## Built With
 
 * [Java 17](https://keepgrowing.in/java/how-to-install-openjdk-17-on-ubuntu/)
+* [Junit5](https://junit.org/junit5/docs/current/user-guide/#overview)
