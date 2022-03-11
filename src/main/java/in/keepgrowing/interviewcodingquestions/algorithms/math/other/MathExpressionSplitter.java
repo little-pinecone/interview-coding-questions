@@ -27,11 +27,11 @@ public class MathExpressionSplitter {
             return List.of();
         }
         Matcher matcher = EXPRESSION_PART_PATTERN.matcher(expression);
-        var list = new LinkedList<String>();
+        var parsedExpression = new LinkedList<String>();
         while (matcher.find()) {
-            list.add(matcher.group(1));
+            parsedExpression.add(matcher.group(1));
         }
 
-        return list;
+        return parsedExpression;
     }
 }
