@@ -23,10 +23,15 @@ Run unit tests with the following command in the project directory:
 mvn test
 ```
 
+You can examine test cases in
+the [test](https://github.com/little-pinecone/interview-coding-questions/tree/master/src/test/java/in/keepgrowing/interviewcodingquestions)
+folder
+
 ## Algorithms
 
 ### Math
 
+* [Splitting mathematical operation into list of operators and operands](https://github.com/little-pinecone/interview-coding-questions/blob/master/src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/other/MathExpressionSplitter.java)
 * [Fibonacci number](https://github.com/little-pinecone/interview-coding-questions/tree/master/src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/fibonacci)
 
 ## Built With
