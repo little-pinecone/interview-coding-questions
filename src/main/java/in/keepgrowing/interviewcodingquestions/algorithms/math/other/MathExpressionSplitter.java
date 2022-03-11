@@ -23,6 +23,9 @@ public class MathExpressionSplitter {
     private static final Pattern EXPRESSION_PART_PATTERN = Pattern.compile("(\\d+|[^ 0-9])");
 
     public List<String> split(String expression) {
+        if (null == expression) {
+            return List.of();
+        }
         Matcher matcher = EXPRESSION_PART_PATTERN.matcher(expression);
         var list = new LinkedList<String>();
         while (matcher.find()) {

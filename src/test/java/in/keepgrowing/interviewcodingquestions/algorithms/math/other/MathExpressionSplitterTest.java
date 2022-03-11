@@ -17,6 +17,7 @@ class MathExpressionSplitterTest {
     private static Stream<Arguments> getExpressionData() {
         return Stream.of(
                 Arguments.arguments("", List.of()),
+                Arguments.arguments(null, List.of()),
                 Arguments.arguments("1+2", List.of("1", "+", "2")),
                 Arguments.arguments(" 1 + 2 - 3", List.of("1", "+", "2", "-", "3")),
                 Arguments.arguments("11+22", List.of("11", "+", "22")),
