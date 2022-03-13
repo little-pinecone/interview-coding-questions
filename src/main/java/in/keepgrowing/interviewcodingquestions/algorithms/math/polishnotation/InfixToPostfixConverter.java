@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Map;
 
-public class PolishNotationConverter {
+public class InfixToPostfixConverter {
 
     public static final int ADD_OR_SUBTRACT = 2;
     public static final int MULTIPLE_OR_DIVIDE = 3;
@@ -17,16 +17,14 @@ public class PolishNotationConverter {
             "*", MULTIPLE_OR_DIVIDE,
             "/", MULTIPLE_OR_DIVIDE,
             "^", POWER);
-    private static final String OPENING_PARENTHESIS = "(";
-    private static final String CLOSING_PARENTHESIS = ")";
 
     private final MathExpressionSplitter splitter;
 
-    public PolishNotationConverter(MathExpressionSplitter splitter) {
+    public InfixToPostfixConverter(MathExpressionSplitter splitter) {
         this.splitter = splitter;
     }
 
-    public String infixToPostfix(String original) {
+    public String convert(String original) {
         if (null == original || original.isBlank()) {
             return "";
         }
@@ -34,13 +32,13 @@ public class PolishNotationConverter {
         var result = new StringBuilder();
         List<String> parsed = splitter.split(original);
         parsed.forEach(element -> {
-            if (OPENING_PARENTHESIS.equals(element)) {
+            if (Parenthesis.isOpening(element)) {
                 operators.push(element);
-            } else if (CLOSING_PARENTHESIS.equals(element)) {
-                while (!(operators.isEmpty() || OPENING_PARENTHESIS.equals(operators.peek()))) {
+            } else if (Parenthesis.isClosing(element)) {
+                while (!(operators.isEmpty() || Parenthesis.isOpening(operators.peek()))) {
                     result.append(operators.pop());
                 }
-                if (!operators.isEmpty() && OPENING_PARENTHESIS.equals(operators.peek())) {
+                if (foundOpeningParenthesis(operators)) {
                     operators.pop();
                 } else {
                     throw new IllegalArgumentException("Mismatched parentheses");
@@ -55,12 +53,14 @@ public class PolishNotationConverter {
                 result.append(element);
             }
         });
-        if (operators.contains(OPENING_PARENTHESIS)) {
-            throw new IllegalArgumentException("Mismatched parentheses");
-        }
+        validateOperators(operators);
         operators.forEach(result::append);
 
         return result.toString().stripLeading();
+    }
+
+    private boolean foundOpeningParenthesis(ArrayDeque<String> operators) {
+        return !operators.isEmpty() && Parenthesis.isOpening(operators.peek());
     }
 
     private boolean isOperator(String element) {
@@ -72,7 +72,13 @@ public class PolishNotationConverter {
     }
 
     private boolean previousGetsPrecedence(String previous, String current) {
-        return !OPENING_PARENTHESIS.equals(previous)
+        return !Parenthesis.isOpening(previous)
                 && (OPERATOR_PRECEDENCE.get(previous) >= OPERATOR_PRECEDENCE.get(current));
+    }
+
+    private void validateOperators(ArrayDeque<String> operators) {
+        if (operators.contains(Parenthesis.OPENING.getValue())) {
+            throw new IllegalArgumentException("Mismatched parentheses");
+        }
     }
 }

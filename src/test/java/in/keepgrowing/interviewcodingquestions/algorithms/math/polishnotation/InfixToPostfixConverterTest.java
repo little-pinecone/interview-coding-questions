@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -16,10 +17,10 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(org.mockito.junit.jupiter.MockitoExtension.class)
-class PolishNotationConverterTest {
+@ExtendWith(MockitoExtension.class)
+class InfixToPostfixConverterTest {
 
-    private PolishNotationConverter converter;
+    private InfixToPostfixConverter infixToPostfix;
 
     @Mock
     private MathExpressionSplitter expressionSplitter;
@@ -71,7 +72,7 @@ class PolishNotationConverterTest {
 
     @BeforeEach
     void setUp() {
-        converter = new PolishNotationConverter(expressionSplitter);
+        infixToPostfix = new InfixToPostfixConverter(expressionSplitter);
     }
 
     @ParameterizedTest
@@ -80,7 +81,7 @@ class PolishNotationConverterTest {
         when(expressionSplitter.split(original))
                 .thenReturn(parsed);
 
-        String actual = converter.infixToPostfix(original);
+        String actual = infixToPostfix.convert(original);
 
         assertEquals(expected, actual);
     }
@@ -91,7 +92,7 @@ class PolishNotationConverterTest {
         when(expressionSplitter.split(input))
                 .thenReturn(parsed);
 
-        assertThrows(RuntimeException.class, () -> converter.infixToPostfix(input));
+        assertThrows(RuntimeException.class, () -> infixToPostfix.convert(input));
     }
 
     @ParameterizedTest
@@ -100,7 +101,7 @@ class PolishNotationConverterTest {
         when(expressionSplitter.split(original))
                 .thenReturn(parsed);
 
-        String actual = converter.infixToPostfix(original);
+        String actual = infixToPostfix.convert(original);
 
         assertNotEquals(expected, actual);
     }
@@ -109,7 +110,7 @@ class PolishNotationConverterTest {
     @NullAndEmptySource
     @ValueSource(strings = {" ", "   ", "\t", "\n"})
     void shouldNotConvertEmptyInput(String input) {
-        String actual = converter.infixToPostfix(input);
+        String actual = infixToPostfix.convert(input);
 
         assertTrue(actual.isBlank());
     }
