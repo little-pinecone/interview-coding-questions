@@ -16,17 +16,18 @@ public class MathExpressionSplitter {
      * <p>
      *     <ul>
      *         <li>1st alternative for numbers</li>
-     *         <li>2nd alternative for anything but numbers and whitespaces</li>
+     *         <li>2nd alternative for functions</li>
+     *         <li>3nd alternative for anything but numbers and whitespaces</li>
      *     </ul>
      * </p>
      */
-    private static final Pattern EXPRESSION_PART_PATTERN = Pattern.compile("(\\d+|[^ 0-9])");
+    private static final Pattern PART_PATTERN = Pattern.compile("(\\d+|\\b(sin|cos|tg|ctg|max|min)\\b|[^ 0-9])");
 
     public List<String> split(String expression) {
         if (null == expression) {
             return List.of();
         }
-        Matcher matcher = EXPRESSION_PART_PATTERN.matcher(expression);
+        Matcher matcher = PART_PATTERN.matcher(expression);
         var parsedExpression = new LinkedList<String>();
         while (matcher.find()) {
             parsedExpression.add(matcher.group(1));

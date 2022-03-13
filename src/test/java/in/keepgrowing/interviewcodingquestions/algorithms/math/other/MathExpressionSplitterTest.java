@@ -27,7 +27,9 @@ class MathExpressionSplitterTest {
                 Arguments.arguments("(1+2)^3", List.of("(", "1", "+", "2", ")", "^", "3")),
                 Arguments.arguments("a+b*c-d", List.of("a", "+", "b", "*", "c", "-", "d")),
                 Arguments.arguments("2*a+c-d", List.of("2", "*", "a", "+", "c", "-", "d")),
-                Arguments.arguments("((1+2)*3)/2", List.of("(", "(", "1", "+", "2", ")", "*", "3", ")", "/", "2"))
+                Arguments.arguments("((1+2)*3)/2", List.of("(", "(", "1", "+", "2", ")", "*", "3", ")", "/", "2")),
+                Arguments.arguments("sin(max(2,3)/3*π)",
+                        List.of("sin", "(", "max", "(", "2", ",", "3", ")", "/", "3", "*", "π", ")"))
         );
     }
 
