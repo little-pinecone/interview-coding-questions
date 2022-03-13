@@ -31,8 +31,8 @@ folder
 
 ### Math
 
-* [Splitting mathematical operation into list of operators and operands](https://github.com/little-pinecone/interview-coding-questions/blob/master/src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/other/MathExpressionSplitter.java)
-* [Fibonacci number](https://github.com/little-pinecone/interview-coding-questions/tree/master/src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/fibonacci)
+* [Splitting mathematical operation into list of operators and operands](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/other/MathExpressionSplitter.java)
+* [Fibonacci number](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/fibonacci)
 * [Polish notation](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/polishnotation)
 
 ## Built With
