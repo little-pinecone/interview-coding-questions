@@ -8,15 +8,16 @@ import java.util.Map;
 
 public class InfixToPostfixConverter {
 
-    public static final int ADD_OR_SUBTRACT = 2;
-    public static final int MULTIPLE_OR_DIVIDE = 3;
-    public static final int POWER = 4;
+    private static final int ADD_OR_SUBTRACT = 2;
+    private static final int MULTIPLE_OR_DIVIDE = 3;
+    private static final int POWER = 4;
     private static final Map<String, Integer> OPERATOR_PRECEDENCE = Map.of(
             "+", ADD_OR_SUBTRACT,
             "-", ADD_OR_SUBTRACT,
             "*", MULTIPLE_OR_DIVIDE,
             "/", MULTIPLE_OR_DIVIDE,
             "^", POWER);
+    private static final String NUMBER_SEPARATOR = " ";
 
     private final MathExpressionSplitter splitter;
 
@@ -49,7 +50,7 @@ public class InfixToPostfixConverter {
                 }
                 operators.push(element);
             } else {
-                result.append(" ");
+                result.append(NUMBER_SEPARATOR);
                 result.append(element);
             }
         });
