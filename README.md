@@ -35,6 +35,10 @@ folder
 * [Fibonacci number](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/fibonacci)
 * [Polish notation](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/polishnotation)
 
+## Data structures
+
+* [Stack](src/main/java/in/keepgrowing/interviewcodingquestions/datastructures/stack)
+
 ## Built With
 
 * [Java 17](https://keepgrowing.in/java/how-to-install-openjdk-17-on-ubuntu/)
