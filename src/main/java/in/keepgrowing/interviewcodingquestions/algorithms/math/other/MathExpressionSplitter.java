@@ -16,7 +16,7 @@ public class MathExpressionSplitter {
      * <p>
      *     <ul>
      *         <li>1st alternative for numbers</li>
-     *         <li>2nd alternative for functions</li>
+     *         <li>2nd alternative for common functions</li>
      *         <li>3nd alternative for anything but numbers and whitespaces</li>
      *     </ul>
      * </p>
@@ -24,7 +24,7 @@ public class MathExpressionSplitter {
     private static final Pattern PART_PATTERN = Pattern.compile("(\\d+|\\b(sin|cos|tg|ctg|max|min)\\b|[^ 0-9])");
 
     public List<String> split(String expression) {
-        if (null == expression) {
+        if (null == expression || expression.isBlank()) {
             return List.of();
         }
         Matcher matcher = PART_PATTERN.matcher(expression);
