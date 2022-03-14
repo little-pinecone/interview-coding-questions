@@ -35,6 +35,10 @@ folder
 * [Fibonacci number](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/fibonacci)
 * [Polish notation](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/polishnotation)
 
+### String
+
+* [Palindrome](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/string/palindrome)
+
 ## Data structures
 
 * [Stack](src/main/java/in/keepgrowing/interviewcodingquestions/datastructures/stack)
