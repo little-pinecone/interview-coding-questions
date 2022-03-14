@@ -5,9 +5,9 @@ package in.keepgrowing.interviewcodingquestions.algorithms.math.polishnotation;
  */
 public class InfixToPrefixNaiveConverter {
 
-    private final InfixToPostfixConverter infixToPostfixConverter;
+    private final InfixToPostfixNaiveConverter infixToPostfixConverter;
 
-    public InfixToPrefixNaiveConverter(InfixToPostfixConverter infixToPostfixConverter) {
+    public InfixToPrefixNaiveConverter(InfixToPostfixNaiveConverter infixToPostfixConverter) {
         this.infixToPostfixConverter = infixToPostfixConverter;
     }
 
@@ -15,13 +15,20 @@ public class InfixToPrefixNaiveConverter {
         if (null == original || original.isBlank()) {
             return "";
         }
-        var reversed = new StringBuilder(original).reverse().toString();
-        var withFixedParenthesis = reversed
-                .replace('(', '<')
-                .replace(')', '(')
-                .replace('<', ')');
-        String postfix = infixToPostfixConverter.convert(withFixedParenthesis);
+        String postfix = infixToPostfixConverter.convert(reverse(original));
 
         return new StringBuilder(postfix).reverse().toString();
+    }
+
+    private String reverse(String original) {
+        var reversed = new StringBuilder();
+        for (int i = original.length() - 1; i >= 0; i--) {
+            if (original.charAt(i) == '(') {
+                reversed.append(')');
+            } else if (original.charAt(i) == ')') {
+                reversed.append('(');
+            } else reversed.append(original.charAt(i));
+        }
+        return reversed.toString();
     }
 }
