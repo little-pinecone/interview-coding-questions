@@ -3,6 +3,7 @@ package in.keepgrowing.interviewcodingquestions.algorithms.math.polishnotation;
 import in.keepgrowing.interviewcodingquestions.algorithms.math.other.MathExpressionSplitter;
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.List;
 import java.util.Map;
 
@@ -33,8 +34,8 @@ public class InfixToPostfixConverter {
         if (isInvalid(original)) {
             return "";
         }
-        var operators = new ArrayDeque<String>();
         var result = new StringBuilder();
+        Deque<String> operators = new ArrayDeque<>();
         List<String> parsed = splitter.split(original);
         parsed.forEach(element -> {
             if (Parenthesis.isOpening(element)) {
@@ -68,11 +69,11 @@ public class InfixToPostfixConverter {
         return null == original || original.isBlank();
     }
 
-    private boolean foundOpeningParenthesis(ArrayDeque<String> operators) {
+    private boolean foundOpeningParenthesis(Deque<String> operators) {
         return !operators.isEmpty() && Parenthesis.isOpening(operators.peek());
     }
 
-    private boolean openingParenthesisNotFound(ArrayDeque<String> operators) {
+    private boolean openingParenthesisNotFound(Deque<String> operators) {
         return !(operators.isEmpty() || Parenthesis.isOpening(operators.peek()));
     }
 
@@ -80,8 +81,8 @@ public class InfixToPostfixConverter {
         return OPERATOR_PRECEDENCE.containsKey(element);
     }
 
-    private boolean shouldTakePreviousOperators(ArrayDeque<String> previousOperators, String current) {
-        return !previousOperators.isEmpty() && previousGetsPrecedence(previousOperators.peek(), current);
+    private boolean shouldTakePreviousOperators(Deque<String> operators, String current) {
+        return !operators.isEmpty() && previousGetsPrecedence(operators.peek(), current);
     }
 
     private boolean previousGetsPrecedence(String previous, String current) {
@@ -89,7 +90,7 @@ public class InfixToPostfixConverter {
                 && (OPERATOR_PRECEDENCE.get(previous) >= OPERATOR_PRECEDENCE.get(current));
     }
 
-    private void validateOperators(ArrayDeque<String> operators) {
+    private void validateOperators(Deque<String> operators) {
         if (operators.contains(Parenthesis.OPENING.getValue())) {
             throw new IllegalArgumentException("Mismatched parentheses");
         }
