@@ -9,22 +9,22 @@ a fixed number of operands.
 
 While there are elements to be read, read an element and if it is:
 
-- a number – add it to the `output`
+- an operand – add it to the `output`
 - an operator
-    - if its precedence is greater than or equal to the precedence of the first operator on the `operator stack` – pop
-      elements from `operator stack` to the `output`
-    - if its precedence is weaker, or it is an opening parenthesis – push it to the `operator stack`
+    - if the precedence of the operator in the `head` of the `operator stack` is greater than or equal to its precedence
+      – pop elements from `operator stack` to the `output`, only then add the operator to the stack
+    - if its precedence is greater, or it is an opening parenthesis – push it to the `operator stack`
     - if it is a closing parenthesis – pop elements from the `operator stack` to the `output` until you encounter an
       opening parenthesis, discard the opening parenthesis; if there is no opening parenthesis then there are mismatched
       parentheses
 
 While there are operators on the `operator stack`:
 
-- if the operator on top of the `operator stack` is an opening parenthesis, then there are mismatched parentheses
+- if `operator stack` contains an opening parenthesis, then there are mismatched parentheses
 - pop the operators from the `operator stack` to the `output`
 
-:no_entry: The example implementation does not take into account operator associativity! Therefore, in some cases
-the conversion may not produce correct results.
+:no_entry: The example implementation does not take into account operator associativity! Therefore, in some cases the
+conversion may not produce correct results.
 
 ## References
 

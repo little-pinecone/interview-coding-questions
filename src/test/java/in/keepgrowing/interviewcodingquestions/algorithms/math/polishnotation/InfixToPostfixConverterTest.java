@@ -97,7 +97,7 @@ class InfixToPostfixConverterTest {
 
     @ParameterizedTest
     @MethodSource(value = "getUnsupportedInput")
-    void documentUnSupportedInput(String original, List<String> parsed, String expected) {
+    void documentUnsupportedInput(String original, List<String> parsed, String expected) {
         when(expressionSplitter.split(original))
                 .thenReturn(parsed);
 

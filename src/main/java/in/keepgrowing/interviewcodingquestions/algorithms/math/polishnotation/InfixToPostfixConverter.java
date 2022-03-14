@@ -6,6 +6,10 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This implementation works both for expressions written with letters and numbers, e.g. {@code 11+2-3+4} and
+ * {@code a+b*c-d}
+ */
 public class InfixToPostfixConverter {
 
     private static final int ADD_OR_SUBTRACT = 2;
@@ -26,7 +30,7 @@ public class InfixToPostfixConverter {
     }
 
     public String convert(String original) {
-        if (null == original || original.isBlank()) {
+        if (isInvalid(original)) {
             return "";
         }
         var operators = new ArrayDeque<String>();
@@ -36,7 +40,7 @@ public class InfixToPostfixConverter {
             if (Parenthesis.isOpening(element)) {
                 operators.push(element);
             } else if (Parenthesis.isClosing(element)) {
-                while (!(operators.isEmpty() || Parenthesis.isOpening(operators.peek()))) {
+                while (openingParenthesisNotFound(operators)) {
                     result.append(operators.pop());
                 }
                 if (foundOpeningParenthesis(operators)) {
@@ -60,8 +64,16 @@ public class InfixToPostfixConverter {
         return result.toString().stripLeading();
     }
 
+    private boolean isInvalid(String original) {
+        return null == original || original.isBlank();
+    }
+
     private boolean foundOpeningParenthesis(ArrayDeque<String> operators) {
         return !operators.isEmpty() && Parenthesis.isOpening(operators.peek());
+    }
+
+    private boolean openingParenthesisNotFound(ArrayDeque<String> operators) {
+        return !(operators.isEmpty() || Parenthesis.isOpening(operators.peek()));
     }
 
     private boolean isOperator(String element) {
