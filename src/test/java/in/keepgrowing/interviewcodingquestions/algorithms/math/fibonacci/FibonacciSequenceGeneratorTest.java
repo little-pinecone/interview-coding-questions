@@ -31,6 +31,14 @@ class FibonacciSequenceGeneratorTest {
         );
     }
 
+    static Stream<Arguments> getStringData() {
+        return Stream.of(
+                Arguments.arguments(1, "1"),
+                Arguments.arguments(3, "1, 1, 2"),
+                Arguments.arguments(12, "1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144")
+        );
+    }
+
     @BeforeEach
     void setUp() {
         sequenceGenerator = new FibonacciSequenceGenerator();
@@ -66,5 +74,21 @@ class FibonacciSequenceGeneratorTest {
         int[] actual = sequenceGenerator.generateArray(length);
 
         assertEquals(0, actual.length);
+    }
+
+    @ParameterizedTest
+    @MethodSource("getStringData")
+    void shouldGenerateString(int length, String expected) {
+        var actual = sequenceGenerator.generateString(length);
+
+        assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints={-1, 0})
+    void shouldNotGenerateStringFromInvalidLength(int length) {
+        var actual = sequenceGenerator.generateString(length);
+
+        assertEquals("", actual);
     }
 }

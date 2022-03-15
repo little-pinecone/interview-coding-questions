@@ -2,18 +2,19 @@ package in.keepgrowing.interviewcodingquestions.algorithms.math.fibonacci;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class FibonacciSequenceGenerator {
 
     public List<Integer> generateList(int length) {
-        var sequence = new LinkedList<Integer>();
+        List<Integer> sequence = new LinkedList<>();
         if (length <= 0) {
             return sequence;
         }
         sequence.add(1);
         int counter = length - 1;
-        var previous = 0;
-        var current = 1;
+        int previous = 0;
+        int current = 1;
         while (counter > 0) {
             current += previous;
             previous = current - previous;
@@ -43,5 +44,22 @@ public class FibonacciSequenceGenerator {
         }
 
         return sequence;
+    }
+
+    public String generateString(int length) {
+        if (length <= 0) {
+            return "";
+        }
+        StringJoiner output = new StringJoiner(", ");
+        output.add("1");
+        int previous = 0;
+        int current = 1;
+        for (int i = 0; i < length - 1; i++) {
+            current += previous;
+            previous = current - previous;
+            output.add(String.valueOf(current));
+        }
+
+        return output.toString();
     }
 }
