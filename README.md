@@ -34,6 +34,8 @@ folder
 * [Splitting mathematical operation into list of operators and operands](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/other/MathExpressionSplitter.java)
 * [Fibonacci number](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/fibonacci)
 * [Polish notation](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/polishnotation)
+* [Factorial calculator](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/factorial)
+* [Prime numbers](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/primenumbers)
 
 ### String
 
