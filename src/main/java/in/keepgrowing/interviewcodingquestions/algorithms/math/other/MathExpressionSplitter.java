@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class MathExpressionSplitter {
 
     /**
-     * This pattern uses two capturing groups:
+     * This pattern uses three capturing groups:
      * <p>
      *     <ul>
      *         <li>1st alternative for numbers</li>
