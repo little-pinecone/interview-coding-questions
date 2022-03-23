@@ -19,4 +19,16 @@ public class GreatestCommonDivisorCalculator {
 
         return calculateRecursively(secondNumber, firstNumber % second);
     }
+
+    public int calculate(int... numbers) {
+        int result = numbers[0];
+        for (int number : numbers) {
+            result = calculateRecursively(result, number);
+            if (result == 1) {
+                return 1;
+            }
+        }
+
+        return result;
+    }
 }
