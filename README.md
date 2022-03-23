@@ -36,6 +36,7 @@ folder
 * [Polish notation](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/polishnotation)
 * [Factorial calculator](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/factorial)
 * [Prime numbers](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/primenumbers)
+* [Greatest common divisor](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/greatestcommondivisor)
 
 ### String
 
