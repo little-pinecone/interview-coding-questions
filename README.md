@@ -47,6 +47,11 @@ folder
 * [Stack](src/main/java/in/keepgrowing/interviewcodingquestions/datastructures/stack)
 * [Queue](src/main/java/in/keepgrowing/interviewcodingquestions/datastructures/queue)
 
+## Other
+
+* [Heap pollution](src/main/java/in/keepgrowing/interviewcodingquestions/other/heappollution)
+
+
 ---
 
 **Built With**
