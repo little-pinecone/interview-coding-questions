@@ -10,6 +10,10 @@ public class GreatestCommonDivisorCalculator {
         int first = Math.abs(firstNumber);
         int second = Math.abs(secondNumber);
 
+        if (first == second) {
+            return first;
+        }
+
         if (first == 0) {
             return second;
         }
@@ -28,7 +32,7 @@ public class GreatestCommonDivisorCalculator {
                 return 1;
             }
         }
-
         return result;
     }
+
 }
