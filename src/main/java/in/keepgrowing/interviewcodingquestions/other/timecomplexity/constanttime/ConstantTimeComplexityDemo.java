@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ConstantTimeComplexityDemo {
 
-    public int sumArithmeticSeries(int firstNumber, int commonDifference, int terms) {
+    public int sumArithmeticProgression(int firstNumber, int commonDifference, int terms) {
         return ((terms / 2) * (2 * firstNumber + (terms - 1) * commonDifference));
     }
 

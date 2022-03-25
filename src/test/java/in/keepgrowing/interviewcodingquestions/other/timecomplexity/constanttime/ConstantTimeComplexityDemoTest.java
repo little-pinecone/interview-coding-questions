@@ -25,10 +25,11 @@ class ConstantTimeComplexityDemoTest {
     @ParameterizedTest
     @CsvSource(value = {
             "1, 2, 4, 16",
-            "1, 2, 8, 64"
+            "1, 2, 8, 64",
+            "2, 3, 5, 40"
     })
-    void shouldSumArithmeticSeries() {
-        int actual = demo.sumArithmeticSeries(1, 2, 8);
+    void shouldSumArithmeticProgression() {
+        int actual = demo.sumArithmeticProgression(1, 2, 8);
 
         assertEquals(64, actual);
     }
