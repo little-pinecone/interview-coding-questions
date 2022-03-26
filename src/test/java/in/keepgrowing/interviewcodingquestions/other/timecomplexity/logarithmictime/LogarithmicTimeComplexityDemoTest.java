@@ -20,7 +20,8 @@ class LogarithmicTimeComplexityDemoTest {
                 Arguments.arguments(new int[]{1, 2, 3, 4}, 3, 2),
                 Arguments.arguments(new int[]{1, 7, 16, 32, 45, 78, 198, 215, 294}, 78, 5),
                 Arguments.arguments(new int[]{15, 27, 33, 49, 89}, 89, 4),
-                Arguments.arguments(new int[]{15, 27, 33, 49, 89}, 15, 0)
+                Arguments.arguments(new int[]{15, 27, 33, 49, 89}, 15, 0),
+                Arguments.arguments(new int[]{1, 2, 2, 4}, 2, 1)
         );
     }
 
@@ -47,8 +48,24 @@ class LogarithmicTimeComplexityDemoTest {
 
     @ParameterizedTest
     @MethodSource(value = "getInvalidData")
-    void shouldNotFindIndexOfNonExistingElement(int[] sortedNumbers, int elementValue) {
+    void shouldNotFindNonExistingElement(int[] sortedNumbers, int elementValue) {
         Integer index = demo.findElementIndexWithBinarySearch(sortedNumbers, elementValue);
+
+        assertNull(index);
+    }
+
+    @ParameterizedTest
+    @MethodSource(value = "getData")
+    void shouldFindElementIndexWithJavaBinarySearch(int[] sortedNumbers, int elementValue, Integer expected) {
+        Integer index = demo.findElementIndexWithJavaBinarySearch(sortedNumbers, elementValue);
+
+        assertEquals(expected, index);
+    }
+
+    @ParameterizedTest
+    @MethodSource(value = "getInvalidData")
+    void shouldNotFindNonExistingElementWithJavaBinarySearch(int[] sortedNumbers, int elementValue) {
+        Integer index = demo.findElementIndexWithJavaBinarySearch(sortedNumbers, elementValue);
 
         assertNull(index);
     }

@@ -1,5 +1,7 @@
 package in.keepgrowing.interviewcodingquestions.other.timecomplexity.logarithmictime;
 
+import java.util.Arrays;
+
 public class LogarithmicTimeComplexityDemo {
 
     public Integer findElementIndexWithBinarySearch(int[] sortedNumbers, int elementValue) {
@@ -18,5 +20,11 @@ public class LogarithmicTimeComplexityDemo {
         }
 
         return null;
+    }
+
+    public Integer findElementIndexWithJavaBinarySearch(int[] sortedNumbers, int elementValue) {
+        var index = Arrays.binarySearch(sortedNumbers, elementValue);
+
+        return index >= 0 ? index : null;
     }
 }
