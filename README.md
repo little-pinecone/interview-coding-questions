@@ -52,6 +52,10 @@ folder
 
 * [Heap pollution](src/main/java/in/keepgrowing/interviewcodingquestions/other/heappollution)
 
+### Time complexity
+
+* [Constant O(1)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/constanttime)
+* [Logarithmic O(log n)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/logarithmictime)
 
 ---
 
