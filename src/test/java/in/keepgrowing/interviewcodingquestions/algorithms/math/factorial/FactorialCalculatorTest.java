@@ -21,7 +21,9 @@ class FactorialCalculatorTest {
             "1, 1",
             "2, 2",
             "3, 6",
-            "8, 40320"
+            "4, 24",
+            "8, 40_320",
+            "10, 3_628_800"
     })
     void shouldCompute(int input, int expected) {
         int actual = generator.calculate(input);
