@@ -27,7 +27,7 @@ class PalindromeValidatorTest {
             "madam",
             "racecar"
     })
-    void shouldReturnTrueForValidPalindromes(String  input) {
+    void shouldReturnTrueForValidPalindromes(String input) {
         assertTrue(palindromeValidator.isValid(input));
     }
 
@@ -39,7 +39,33 @@ class PalindromeValidatorTest {
             "123421",
             "mad1am"
     })
-    void shouldReturnFalseForInvalidPalindromes(String  input) {
+    void shouldReturnFalseForInvalidPalindromes(String input) {
         assertFalse(palindromeValidator.isValid(input));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "b",
+            "bbbb",
+            "kayak",
+            "123321",
+            "22022022",
+            "madam",
+            "racecar"
+    })
+    void shouldReturnTrueForValidPalindromesAlternative(String input) {
+        assertTrue(palindromeValidator.isValidAlternative(input));
+    }
+
+    @ParameterizedTest
+    @NullAndEmptySource
+    @ValueSource(strings = {
+            "  ",
+            "ak",
+            "123421",
+            "mad1am"
+    })
+    void shouldReturnFalseForInvalidPalindromesAlternative(String input) {
+        assertFalse(palindromeValidator.isValidAlternative(input));
     }
 }

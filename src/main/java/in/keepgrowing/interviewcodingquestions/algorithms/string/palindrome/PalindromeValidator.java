@@ -15,6 +15,25 @@ public class PalindromeValidator {
             left++;
             right--;
         }
+
+        return true;
+    }
+
+
+    public boolean isValidAlternative(String input) {
+        if (null == input || input.isBlank()) {
+            return false;
+        }
+        char[] characters = input.toCharArray();
+        int endIndex = characters.length - 1;
+
+        for (char character : characters) {
+            if (character != characters[endIndex]) {
+                return false;
+            }
+            endIndex--;
+        }
+
         return true;
     }
 }
