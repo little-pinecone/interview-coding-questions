@@ -50,16 +50,16 @@ public class FibonacciSequenceGenerator {
         if (length <= 0) {
             return "";
         }
-        StringJoiner output = new StringJoiner(", ");
-        output.add("1");
+        StringJoiner sequence = new StringJoiner(", ");
+        sequence.add("1");
         int previous = 0;
         int current = 1;
-        for (int i = 0; i < length - 1; i++) {
+        for (int i = 1; i < length; i++) {
             current += previous;
             previous = current - previous;
-            output.add(String.valueOf(current));
+            sequence.add(String.valueOf(current));
         }
 
-        return output.toString();
+        return sequence.toString();
     }
 }
