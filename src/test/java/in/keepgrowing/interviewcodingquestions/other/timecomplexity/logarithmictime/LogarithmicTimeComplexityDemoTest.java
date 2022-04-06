@@ -1,10 +1,13 @@
 package in.keepgrowing.interviewcodingquestions.other.timecomplexity.logarithmictime;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,6 +30,7 @@ class LogarithmicTimeComplexityDemoTest {
 
     private static Stream<Arguments> getInvalidData() {
         return Stream.of(
+                Arguments.arguments(new int[]{}, 1),
                 Arguments.arguments(new int[]{17}, 18),
                 Arguments.arguments(new int[]{1, 2, 3, 4}, 0),
                 Arguments.arguments(new int[]{1, 7, 16, 32, 45, 78, 198, 215, 294}, 666)
@@ -48,7 +52,7 @@ class LogarithmicTimeComplexityDemoTest {
 
     @ParameterizedTest
     @MethodSource(value = "getInvalidData")
-    void shouldNotFindNonExistingElement(int[] sortedNumbers, int elementValue) {
+    void shouldNotFindNotExistingElement(int[] sortedNumbers, int elementValue) {
         Integer index = demo.findElementIndexWithBinarySearch(sortedNumbers, elementValue);
 
         assertNull(index);
@@ -56,16 +60,32 @@ class LogarithmicTimeComplexityDemoTest {
 
     @ParameterizedTest
     @MethodSource(value = "getData")
-    void shouldFindElementIndexWithJavaBinarySearch(int[] sortedNumbers, int elementValue, Integer expected) {
-        Integer index = demo.findElementIndexWithJavaBinarySearch(sortedNumbers, elementValue);
+    void shouldFindElementIndexWithJavaArrayBinarySearch(int[] sortedNumbers, int elementValue, Integer expected) {
+        Integer index = demo.findElementIndexWithJavaArrayBinarySearch(sortedNumbers, elementValue);
 
         assertEquals(expected, index);
     }
 
     @ParameterizedTest
     @MethodSource(value = "getInvalidData")
-    void shouldNotFindNonExistingElementWithJavaBinarySearch(int[] sortedNumbers, int elementValue) {
-        Integer index = demo.findElementIndexWithJavaBinarySearch(sortedNumbers, elementValue);
+    void shouldNotFindNotExistingElementWithJavaArrayBinarySearch(int[] sortedNumbers, int elementValue) {
+        Integer index = demo.findElementIndexWithJavaArrayBinarySearch(sortedNumbers, elementValue);
+
+        assertNull(index);
+    }
+
+    @Test
+    void shouldFindElementIndexWithJavaCollectionsBinarySearch() {
+        List<Integer> sortedNumbers = new ArrayList<>(List.of(15, 27, 33, 49, 89));
+        Integer index = demo.findElementIndexWithJavaCollectionBinarySearch(sortedNumbers, 89);
+
+        assertEquals(4, index);
+    }
+
+    @Test
+    void shouldNotFindNotExistingElementIndexWithJavaCollectionsBinarySearch() {
+        List<Integer> sortedNumbers = new ArrayList<>(List.of());
+        Integer index = demo.findElementIndexWithJavaCollectionBinarySearch(sortedNumbers, 89);
 
         assertNull(index);
     }

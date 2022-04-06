@@ -1,6 +1,8 @@
 package in.keepgrowing.interviewcodingquestions.other.timecomplexity.logarithmictime;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LogarithmicTimeComplexityDemo {
 
@@ -22,8 +24,14 @@ public class LogarithmicTimeComplexityDemo {
         return null;
     }
 
-    public Integer findElementIndexWithJavaBinarySearch(int[] sortedNumbers, int elementValue) {
+    public Integer findElementIndexWithJavaArrayBinarySearch(int[] sortedNumbers, int elementValue) {
         var index = Arrays.binarySearch(sortedNumbers, elementValue);
+
+        return index >= 0 ? index : null;
+    }
+
+    public Integer findElementIndexWithJavaCollectionBinarySearch(List<Integer> sortedNumbers, Integer elementValue) {
+        var index = Collections.binarySearch(sortedNumbers, elementValue);
 
         return index >= 0 ? index : null;
     }
