@@ -1,10 +1,10 @@
-package in.keepgrowing.interviewcodingquestions.other.timecomplexity.logarithmictime;
+package in.keepgrowing.interviewcodingquestions.algorithms.search.binarysearch;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class LogarithmicTimeComplexityDemo {
+public class BinarySearchImplementation {
 
     public Integer findElementIndexWithBinarySearch(int[] sortedNumbers, int elementValue) {
         int start = 0;
@@ -24,6 +24,9 @@ public class LogarithmicTimeComplexityDemo {
         return null;
     }
 
+    /**
+     * Java convenience methods
+     */
     public Integer findElementIndexWithJavaArrayBinarySearch(int[] sortedNumbers, int elementValue) {
         var index = Arrays.binarySearch(sortedNumbers, elementValue);
 

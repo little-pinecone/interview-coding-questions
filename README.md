@@ -39,6 +39,14 @@ folder
 * [Greatest common divisor](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/greatestcommondivisor)
 * [Least common multiple](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/math/leastcommonmultiple)
 
+### Sorting
+
+* [Merge sort](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/sorting/mergesort)
+
+### Search
+
+* [Binary search](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/search/binarysearch)
+
 ### String
 
 * [Palindrome](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/string/palindrome)

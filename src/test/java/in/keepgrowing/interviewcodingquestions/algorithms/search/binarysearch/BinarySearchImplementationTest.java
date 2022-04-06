@@ -1,5 +1,6 @@
-package in.keepgrowing.interviewcodingquestions.other.timecomplexity.logarithmictime;
+package in.keepgrowing.interviewcodingquestions.algorithms.search.binarysearch;
 
+import in.keepgrowing.interviewcodingquestions.algorithms.search.binarysearch.BinarySearchImplementation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,9 +14,9 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-class LogarithmicTimeComplexityDemoTest {
+class BinarySearchImplementationTest {
 
-    private LogarithmicTimeComplexityDemo demo;
+    private BinarySearchImplementation demo;
 
     private static Stream<Arguments> getData() {
         return Stream.of(
@@ -39,7 +40,7 @@ class LogarithmicTimeComplexityDemoTest {
 
     @BeforeEach
     void setUp() {
-        demo = new LogarithmicTimeComplexityDemo();
+        demo = new BinarySearchImplementation();
     }
 
     @ParameterizedTest
