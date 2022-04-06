@@ -7,7 +7,7 @@ Algorithms taking logarithmic time are commonly found in operations on binary tr
 
 ## Examples
 
-* [Binary search](../../algorithms/search/binarysearch)
+* [Binary search](https://github.com/little-pinecone/interview-coding-questions/blob/master/src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/search/binarysearch)
 
 ## References
 

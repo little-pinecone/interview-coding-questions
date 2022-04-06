@@ -4,10 +4,10 @@ In many cases, the `n log n` running time is simply the result of performing a `
 
 ## Examples
 
-* [Merge sort](../../algorithms/sorting/mergesort)
+* [Merge sort](https://github.com/little-pinecone/interview-coding-questions/blob/master/src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/sorting/mergesort)
 * `Binary tree sort` creates a binary tree by inserting each element of the n-sized array one by one. Since the insert
-operation on a self-balancing binary search tree takes `O(log n)` time, the entire algorithm takes `O(n log n)`
-time.
+  operation on a self-balancing binary search tree takes `O(log n)` time, the entire algorithm takes `O(n log n)`
+  time.
 
 ## References
 
