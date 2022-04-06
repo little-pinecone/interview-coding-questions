@@ -56,6 +56,7 @@ folder
 
 * [Constant O(1)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/constanttime)
 * [Logarithmic O(log n)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/logarithmictime)
+* [Linear O(n)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/lineartime)
 
 ---
 
