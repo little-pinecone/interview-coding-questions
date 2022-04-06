@@ -1,6 +1,5 @@
 package in.keepgrowing.interviewcodingquestions.algorithms.search.binarysearch;
 
-import in.keepgrowing.interviewcodingquestions.algorithms.search.binarysearch.BinarySearchImplementation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
