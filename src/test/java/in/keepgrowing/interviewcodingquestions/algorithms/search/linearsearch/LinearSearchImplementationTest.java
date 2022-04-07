@@ -32,7 +32,7 @@ class LinearSearchImplementationTest {
     void shouldFindElementIndex() {
         int[] numbers = {12, 76, 1, 0};
 
-        Integer actual = linearSearch.findElementIndexWithLinearSearch(numbers, 1);
+        Integer actual = linearSearch.findElementIndex(numbers, 1);
 
         assertEquals(2, actual);
     }
@@ -44,7 +44,7 @@ class LinearSearchImplementationTest {
                 .mapToInt(n -> n)
                 .toArray();
 
-        Integer actual = linearSearch.findElementIndexWithLinearSearch(numbersAsArray, 100);
+        Integer actual = linearSearch.findElementIndex(numbersAsArray, 100);
 
         assertEquals(-1, actual);
     }

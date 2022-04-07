@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSortImplementation {
 
-    public int[] sortWithMergeSort(int[] numbers) {
+    public int[] sort(int[] numbers) {
         if (numbers.length == 0 || numbers.length == 1) {
             return numbers;
         }
@@ -12,8 +12,8 @@ public class MergeSortImplementation {
         int[] left = Arrays.copyOfRange(numbers, 0, mid);
         int[] right = Arrays.copyOfRange(numbers, mid, numbers.length);
 
-        int[] leftSorted = sortWithMergeSort(left);
-        int[] rightSorted = sortWithMergeSort(right);
+        int[] leftSorted = sort(left);
+        int[] rightSorted = sort(right);
 
         return merge(leftSorted, rightSorted);
     }

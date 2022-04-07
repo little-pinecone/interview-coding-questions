@@ -45,7 +45,7 @@ class BinarySearchImplementationTest {
     @ParameterizedTest
     @MethodSource(value = "getData")
     void shouldFindElementIndexWithBinarySearch(int[] sortedNumbers, int elementValue, Integer expected) {
-        Integer index = demo.findElementIndexWithBinarySearch(sortedNumbers, elementValue);
+        Integer index = demo.findElementIndex(sortedNumbers, elementValue);
 
         assertEquals(expected, index);
     }
@@ -53,7 +53,7 @@ class BinarySearchImplementationTest {
     @ParameterizedTest
     @MethodSource(value = "getInvalidData")
     void shouldNotFindNotExistingElement(int[] sortedNumbers, int elementValue) {
-        Integer index = demo.findElementIndexWithBinarySearch(sortedNumbers, elementValue);
+        Integer index = demo.findElementIndex(sortedNumbers, elementValue);
 
         assertNull(index);
     }

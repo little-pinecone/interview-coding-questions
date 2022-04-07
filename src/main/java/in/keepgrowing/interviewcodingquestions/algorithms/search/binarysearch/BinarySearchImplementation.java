@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BinarySearchImplementation {
 
-    public Integer findElementIndexWithBinarySearch(int[] sortedNumbers, int elementValue) {
+    public Integer findElementIndex(int[] sortedNumbers, int elementValue) {
         int start = 0;
         int end = sortedNumbers.length - 1;
 
