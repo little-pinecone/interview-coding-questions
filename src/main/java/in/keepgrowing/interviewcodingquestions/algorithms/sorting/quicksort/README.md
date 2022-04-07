@@ -19,3 +19,5 @@ With quicksort, dividing lists is more complex than with merge sort, but the mer
 ## References
 
 * [Wikipedia](https://simple.wikipedia.org/wiki/Quicksort)
+* [StackOverflow](https://stackoverflow.com/a/39407750)
+* [GeeksForGeeks](https://www.geeksforgeeks.org/quick-sort/)
