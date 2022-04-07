@@ -42,6 +42,7 @@ folder
 ### Sorting
 
 * [Merge sort](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/sorting/mergesort)
+* [Quicksort](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/sorting/quicksort)
 
 ### Search
 
