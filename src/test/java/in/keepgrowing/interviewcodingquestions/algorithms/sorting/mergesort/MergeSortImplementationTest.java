@@ -22,6 +22,7 @@ class MergeSortImplementationTest {
                 Arguments.arguments(new int[]{0, 10, 89, 0}, new int[]{0, 0, 10, 89}),
                 Arguments.arguments(new int[]{4, 3, 2, 1}, new int[]{1, 2, 3, 4}),
                 Arguments.arguments(new int[]{-4, 3, 2, 1}, new int[]{-4, 1, 2, 3}),
+                Arguments.arguments(new int[]{9, 1, 2, -2, 3}, new int[]{-2, 1, 2, 3, 9}),
                 Arguments.arguments(new int[]{9, 9, 1, 2, 2, 3, 100}, new int[]{1, 2, 2, 3, 9, 9, 100})
         );
     }
