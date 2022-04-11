@@ -14,6 +14,7 @@
         <junit.version>5.8.2</junit.version>
         <maven-surefire.version>2.22.2</maven-surefire.version>
         <mockito.version>4.4.0</mockito.version>
+        <jetbrains.version>23.0.0</jetbrains.version>
     </properties>
 
     <dependencyManagement>
@@ -45,6 +46,12 @@
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${jetbrains.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
