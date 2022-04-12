@@ -23,7 +23,11 @@ class PrimalityValidatorTest {
             "3, true",
             "4, false",
             "5, true",
-            "13, true"
+            "7, true",
+            "8, false",
+            "13, true",
+            "89, true",
+            "97, true",
     })
     void shouldValidate(int number, boolean expected) {
         boolean actual = validator.validate(number);
