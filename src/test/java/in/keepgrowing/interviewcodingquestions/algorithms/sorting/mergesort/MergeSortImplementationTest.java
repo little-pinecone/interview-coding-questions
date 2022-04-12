@@ -34,7 +34,7 @@ class MergeSortImplementationTest {
 
     @ParameterizedTest
     @MethodSource(value = "getData")
-    void ShouldMergeSort(int[] numbers, int[] expected) {
+    void shouldSort(int[] numbers, int[] expected) {
         int[] actual = demo.sort(numbers);
 
         assertArrayEquals(expected, actual);
