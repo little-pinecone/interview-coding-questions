@@ -44,6 +44,7 @@ folder
 * [Merge sort](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/sorting/mergesort)
 * [Quicksort](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/sorting/quicksort)
 * [With Java Comparators](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/sorting/withcomparators)
+* [Insertion sort](src/main/java/in/keepgrowing/interviewcodingquestions/algorithms/sorting/insertionsort)
 
 ### Search
 
@@ -68,6 +69,7 @@ folder
 * [Logarithmic O(log n)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/logarithmictime)
 * [Linear O(n)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/lineartime)
 * [Log-linear O(n log n)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/loglineartime)
+* [Quadratic O(n^2)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/quadratictime)
 
 ---
 
