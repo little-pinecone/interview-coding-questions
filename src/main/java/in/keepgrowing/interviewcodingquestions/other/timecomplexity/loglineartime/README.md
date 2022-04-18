@@ -1,6 +1,6 @@
 # Log-linear time
 
-In many cases, the `n log n` running time is simply the result of performing a `Θ(log n)` operation `n` times.
+In many cases, the `O(n log n)` running time is simply the result of performing a `Θ(log n)` operation `n` times.
 
 ## Examples
 

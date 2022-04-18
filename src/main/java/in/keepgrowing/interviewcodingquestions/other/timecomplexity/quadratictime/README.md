@@ -1,6 +1,6 @@
 # Quadratic time
 
-An algorithm is said to be subquadratic time if `T(n) = o(n^2)`.
+An algorithm is said to be subquadratic time if `T(n) = O(n^2)`.
 
 ## Examples
 
