@@ -7,6 +7,8 @@ sorted first before a binary search algorithm can be used.
 The binary search algorithm works by repeatedly splitting the sorted list into two and working on the part of the list
 that may contain the item that you are looking for until the final list contains only one item.
 
+Time complexity: `O(log n)`.
+
 ## References
 
 * [Wikipedia](https://simple.wikipedia.org/wiki/Binary_search)
