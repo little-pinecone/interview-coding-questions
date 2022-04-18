@@ -58,6 +58,7 @@ folder
 
 * [Stack](src/main/java/in/keepgrowing/interviewcodingquestions/datastructures/stack)
 * [Queue](src/main/java/in/keepgrowing/interviewcodingquestions/datastructures/queue)
+* [Power set](src/main/java/in/keepgrowing/interviewcodingquestions/datastructures/set/powerset)
 
 ## Other
 
@@ -70,6 +71,7 @@ folder
 * [Linear O(n)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/lineartime)
 * [Log-linear O(n log n)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/loglineartime)
 * [Quadratic O(n^2)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/quadratictime)
+* [Exponential O(n^2)](src/main/java/in/keepgrowing/interviewcodingquestions/other/timecomplexity/exponentialtime)
 
 ---
 
